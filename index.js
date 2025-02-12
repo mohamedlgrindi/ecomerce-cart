@@ -65,7 +65,7 @@ function updateCart(){
     `).join("");
 
     const total=cart.reduce((sum,item)=>sum+=item.quantity*item.price,0);
-    Totalprice.textContent=total.toFixed(2);
+    Totalprice.textContent=`$${total.toFixed(2)}`;
 
     localStorage.setItem("cart",JSON.stringify(cart));
 }
