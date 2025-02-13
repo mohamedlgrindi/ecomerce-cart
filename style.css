@@ -146,3 +146,10 @@
     border:none;
     transition: background var(--transition-speed) ease;
 }
+footer {
+    background-color: var(--header-bg);
+    color: var(--header-text);
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 0.9rem;
+  }
