@@ -48,7 +48,7 @@ updateCart();
 }
 
 function removeFromCart(id){
-    cart.filter((cartItem)=>cartItem.id!==id);
+    cart=cart.filter((cartItem)=>cartItem.id!==id);
     updateCart();
 }
 
@@ -59,13 +59,13 @@ function updateCart(){
     map((item)=>`
      <div id="cartItem">
      <span>${item.name} (x${item.quantity})</span>
-     <span>${item.price}</span>
+     <span>$${item.price}</span>
      <button onclick="removeFromCart(${item.id})">Remove</button>
      </div>
     `).join("");
 
     const total=cart.reduce((sum,item)=>sum+=item.quantity*item.price,0);
-    Totalprice.textContent=`$${total.toFixed(2)}`;
+    Totalprice.textContent=total.toFixed(2);
 
     localStorage.setItem("cart",JSON.stringify(cart));
 }
